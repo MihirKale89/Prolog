@@ -1,0 +1,21 @@
+Write your answers in a word processor to the following problems in the Problem Set of Chapter 16 in our text:
+
+p. 760, 1  Compare the concept of data typing in Ada with that of Prolog.
+  Data typing in Ada is often static, whereas data type in Prolog is bound at resolution time, specifically during instantiation.  Data is strongly typed in Ada while variables in Prolog only need to remain the same type during resolution.
+
+p. 760, 2  Describe how a multiple-processor machine could be used to implement resolution.  Could Prolog, as currently defined, use this method?
+  Instead of backtracking through a depth-first search, resolution could be implemented using breadth-first search to process multiple branches in parallel.  Prolog, as currently defined, would need to be changed to support multithreaded breadth-first search resolution.  SWI-Prolog offers an alternative approach to concurrency by supporting explicit thread creation, where each the goal of each thread is resolved in the normal (depth-first search and backtracking) way.
+
+p. 761, 6  Explain two ways in which the list-processing capabilities of Scheme and Prolog are similar.
+  In both Scheme and Prolog, lists are treated as linked lists.  That is, they both look at lists as consisting of the head (CAR), and tail (CDR) and operate on them recursively.  They both support many functions for basic list manipulation.
+
+p. 761, 7  In what ways are the list-processing capabilites of Scheme and Prolog different?
+  Scheme processes lists using function definitions while prolog operates on lists in the resolution process.  Prolog's approach makes it easy to determine if a list operation results in a specific list.
+
+In the Programming Exercises of Chapter 16 in our text, write the Prolog program and test it on our Prolog system (you can copy the program and a script of running it with appropriate queries on Prolog and paste them into the attached file in your submission on Cougar Course):
+
+p. 761, 5  Write a Prolog program that returns a list containing the union of the elements of two given lists. (Note that "union" is already defined in SWI-Prolog)
+  union2(Xs,Ys,U) :-
+    findall(X,(member(X,Xs),member(X,Ys)),U).
+
+Turn in the answer file as an attachment when you submit the assignment in Cougar Course by 10:30 am on the due day.

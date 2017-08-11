@@ -1,0 +1,32 @@
+Script started on Sun 30 Nov 2014 03:53:58 AM PST
+jeff@LittleBlue:~/Dropbox/src/swi-prolog$ swipl
+% library(swi_hooks) compiled into pce_swi_hooks 0.00 sec, 2,224 bytes
+Welcome to SWI-Prolog (Multi-threaded, 32 bits, Version 5.10.4)
+Copyright (c) 1990-2011 University of Amsterdam, VU Amsterdam
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software,
+and you are welcome to redistribute it under certain conditions.
+Please visit http://www.swi-prolog.org for details.
+
+For help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ['union2.pl'].
+% union2.pl compiled 0.00 sec, 644 bytes
+true.
+
+?- listing(union2)[C[C[C[C[C[C[C[C.
+union2(B, C, D) :-
+	findall(A, (member(A, B), member(A, C)), D).
+
+true.
+
+?- union2([a,b,c,d,e,f,g,h],[1,2,3,4,b,c,d],X)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C.
+X = [b, c, d].
+
+?- union2([1,2,3,4,5],[1,2,3,4,5,z],Y)[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C.
+Y = [1, 2, 3, 4, 5].
+
+?- 
+% halt
+jeff@LittleBlue:~/Dropbox/src/swi-prolog$ exit
+
+Script done on Sun 30 Nov 2014 03:55:07 AM PST
